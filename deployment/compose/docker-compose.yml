@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  signaturegen:
+    container_name: signaturegen
+    image: simonsvosstestcontainers.azurecr.io/simonsvoss-signaturegen:latest
+    environment:
+      - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
+
+  registration:
+    container_name: registration
+    image: simonsvosstestcontainers.azurecr.io/simonsvoss-registration:latest
+    ports:
+      - 80:80
+    environment:
+      - ApiConfiguration__LicenseServerApiUrl=https://signaturegen
+      - APPINSIGHTS_INSTRUMENTATIONKEY=${APPINSIGHTS_INSTRUMENTATIONKEY}
