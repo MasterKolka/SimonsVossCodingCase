@@ -22,6 +22,7 @@ namespace SimonsVossCodingCase.RegistrationService
         {
             services.AddSwaggerGen();
             services.AddMvc();
+            services.AddApplicationInsightsTelemetry();
             //Configs
             services.Configure<ApiConfiguration>(_configuration.GetSection(nameof(ApiConfiguration)));
             

@@ -40,6 +40,7 @@ namespace SimonsVossCodingCase.LicenseSignatureGenerator
                             o.AllowAnyClientCertificate();
                         });
                     });
+                    webBuilder.ConfigureLogging(builder => builder.AddApplicationInsights());
                 });
     }
 }
