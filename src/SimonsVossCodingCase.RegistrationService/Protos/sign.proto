@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "SimonsVossCodingCase.GrpcServices";
+
+package sign;
+
+service SignService {
+  rpc Sign (SignRequest) returns (SignReply);
+}
+
+message SignRequest {
+  string json = 1;
+}
+
+// The response message containing the greetings.
+message SignReply {
+  string json = 1;
+}
