@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonsVossCodingCase.LicenseSignatureGenerator", "src\SimonsVossCodingCase.LicenseSignatureGenerator\SimonsVossCodingCase.LicenseSignatureGenerator.csproj", "{2C1665DC-D406-4D02-AE83-65F62D43F0CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonsVossCodingCase.LicenseSignatureGenerator.Tests", "SimonsVossCodingCase.LicenseSignatureGenerator.Tests\SimonsVossCodingCase.LicenseSignatureGenerator.Tests.csproj", "{A3EA9A94-73B8-4A11-94F0-0F9D94CC330D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{2C1665DC-D406-4D02-AE83-65F62D43F0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C1665DC-D406-4D02-AE83-65F62D43F0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C1665DC-D406-4D02-AE83-65F62D43F0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3EA9A94-73B8-4A11-94F0-0F9D94CC330D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3EA9A94-73B8-4A11-94F0-0F9D94CC330D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3EA9A94-73B8-4A11-94F0-0F9D94CC330D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3EA9A94-73B8-4A11-94F0-0F9D94CC330D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
