@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  signaturegen:
+    container_name: signaturegen
+    build: ./SimonsVossCodingCase.LicenseSignatureGenerator
+    environment:
+      - APPINSIGHTS_INSTRUMENTATIONKEY=b17a8b79-eeb8-4b5b-a2e8-ff3ca34fb366
+
+  registration:
+    container_name: registration
+    build: ./SimonsVossCodingCase.RegistrationService
+    ports:
+      - 80:80
+    environment:
+      - ApiConfiguration__LicenseServerApiUrl=https://signaturegen
+      - APPINSIGHTS_INSTRUMENTATIONKEY=b17a8b79-eeb8-4b5b-a2e8-ff3ca34fb366

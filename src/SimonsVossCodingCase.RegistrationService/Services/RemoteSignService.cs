@@ -27,6 +27,8 @@ namespace SimonsVossCodingCase.RegistrationService.Services
             _logger = logger;
             _serverAddress = apiConfiguration.Value.LicenseServerApiUrl;
             _httpClientHandler = new HttpClientHandler();
+            _httpClientHandler.ServerCertificateCustomValidationCallback =
+                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
         }
 
         public async Task<string> SignJson(string json, CancellationToken cancellationToken)
