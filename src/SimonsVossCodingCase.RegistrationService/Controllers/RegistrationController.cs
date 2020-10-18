@@ -14,10 +14,12 @@ namespace SimonsVossCodingCase.RegistrationService.Controllers
     public class RegistrationController : ControllerBase
     {
         private readonly IRemoteSignService _remoteSignService;
+        private readonly ILicenseKeyValidatorService _licenseKeyValidatorService;
 
-        public RegistrationController(IRemoteSignService remoteSignService)
+        public RegistrationController(IRemoteSignService remoteSignService, ILicenseKeyValidatorService licenseKeyValidatorService)
         {
             _remoteSignService = remoteSignService;
+            _licenseKeyValidatorService = licenseKeyValidatorService;
         }
 
         [HttpPost]
@@ -26,6 +28,11 @@ namespace SimonsVossCodingCase.RegistrationService.Controllers
         [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> Get(RegistrationModel model, CancellationToken cancellationToken = default)
         {
+            if (!_licenseKeyValidatorService.IsValid(model.LicenseKey))
+            {
+                ModelState.AddModelError(nameof(model.LicenseKey), "LicenseKey is invalid");
+            }
+            
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

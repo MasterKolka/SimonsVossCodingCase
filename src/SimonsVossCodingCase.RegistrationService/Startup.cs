@@ -27,6 +27,7 @@ namespace SimonsVossCodingCase.RegistrationService
             
             //DI
             services.AddScoped<IRemoteSignService, RemoteSignService>();
+            services.AddScoped<ILicenseKeyValidatorService, LicenseKeyValidatorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
