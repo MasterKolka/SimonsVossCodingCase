@@ -4,4 +4,14 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos\sign.proto">
+            <GrpcServices>Server</GrpcServices>
+        </Protobuf>
+    </ItemGroup>
+
 </Project>
