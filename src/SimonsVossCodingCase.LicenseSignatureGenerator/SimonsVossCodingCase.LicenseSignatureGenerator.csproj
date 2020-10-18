@@ -14,4 +14,10 @@
         </Protobuf>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="ca.pfx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

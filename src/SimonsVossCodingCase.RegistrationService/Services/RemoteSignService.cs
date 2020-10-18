@@ -1,5 +1,7 @@
 using System;
+using System.IO;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Net.Client;
@@ -29,6 +31,12 @@ namespace SimonsVossCodingCase.RegistrationService.Services
             _httpClientHandler = new HttpClientHandler();
             _httpClientHandler.ServerCertificateCustomValidationCallback =
                 HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            _httpClientHandler.ClientCertificates.Add(
+                new X509Certificate2(
+                    Path.Combine(webHostEnvironment.ContentRootPath, "regserver.full.pfx"),
+                    "xxxx"
+                )
+            );
         }
 
         public async Task<string> SignJson(string json, CancellationToken cancellationToken)

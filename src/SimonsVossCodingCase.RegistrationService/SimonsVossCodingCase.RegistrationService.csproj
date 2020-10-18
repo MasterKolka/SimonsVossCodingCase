@@ -20,4 +20,10 @@
       </Protobuf>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="regserver.full.pfx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
